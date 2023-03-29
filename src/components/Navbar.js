@@ -1,11 +1,11 @@
 
 const Navbar = () => {
     return(
-        <div className="navbar">
+        <nav className="navbar">
             <img className="react-logo" src="./logo192.png" alt="small react icon"></img>
-            <h1 className="page-title">ReactFacts</h1>
-            <p className="page-description">React Course - Project 1</p>
-        </div>
+            <h3 className="page-title">ReactFacts</h3>
+            <h4 className="page-description">React Course - Project 1</h4>
+        </nav>
     )
 }
 
