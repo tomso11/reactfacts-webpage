@@ -2,11 +2,12 @@
 
 * {
   box-sizing: border-box;
+  margin: 0px;
 }
 
 body{
   font-family: 'Inter', sans-serif;
-  background-color: #282D35;
+  background-color: white;
 }
 
 /* Navbar component */
@@ -16,8 +17,6 @@ body{
 
   height: 90px;
   padding: 30px 25px;
-
-  background: #21222A;
 }
 
 .react-logo{
@@ -44,15 +43,12 @@ body{
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-
-  color: #DEEBF8;
 }
 /* Main component */
 .main-page {
   padding: 57px 27px;
 
   /* actually the image here was already colored and cut in half so I basically hardcoded the offset */
-  background-color: #33373e;
   background-image: url("../public/logo192.png");
   background-size: 260px;
   background-repeat: no-repeat;
@@ -67,14 +63,14 @@ body{
   font-size: 39px;
   letter-spacing: -0.05em;
 
-  color: #FFFFFF;
+  color: black;
 }
 
 .main-list {
   margin-top: 46px;
   max-width: 400px;
   
-  color: #FFFFFF;
+  color: black;
 }
 
 .main-list > li {
@@ -84,4 +80,99 @@ body{
 .main-list>li::marker {
   color: #61DAFB;
   font-size: 1.4rem;
+}
+
+/* swtich component */
+
+.switch-container {
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 7px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #61DAFB;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #61DAFB;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.light-mode-label {
+  margin-right: 10px;
+  color: black;
+}
+
+.dark-mode-label {
+  margin-left: 10px;
+  color: black;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #282D35;
+  color: #DEEBF8;
+}
+
+.navbar.dark {
+  background-color: #21222A;
+}
+
+body.dark .slider {
+  background-color: #ffffff;
+}
+
+.light-mode-label.dark {
+  color: #DEEBF8;
+}
+
+.dark-mode-label.dark {
+  color: #DEEBF8;
+}
+
+.main-title.dark{
+  color: #DEEBF8;
+}
+
+.main-list.dark {
+  color: #DEEBF8;
 }
